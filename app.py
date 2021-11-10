@@ -16,8 +16,8 @@ sentry_sdk.init(
 app = Flask(__name__)
 
 @app.route("/inverse/<float:divisor>")
-def hello_world(divisor):
-    return 1 / divisor
+def divide(divisor):
+    return { "result": 1.0 / divisor }
 
 @app.route("/test")
 def test():
