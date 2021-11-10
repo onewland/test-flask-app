@@ -4,7 +4,7 @@ import sentry_sdk
 from sentry_sdk.integrations.flask import FlaskIntegration
 
 sentry_sdk.init(
-    dsn="https://d7e6a5e37601417db2324d8ff3aba5cb@o1.ingest.sentry.io/6058569",
+    dsn="https://7d07608112824d008d166d8ef7809eb8@o1066102.ingest.sentry.io/6058608",
     integrations=[FlaskIntegration()],
 
     # Set traces_sample_rate to 1.0 to capture 100%
@@ -15,9 +15,9 @@ sentry_sdk.init(
 
 app = Flask(__name__)
 
-@app.route("/")
-def hello_world():
-    return 1 / 0
+@app.route("/inverse/<float:divisor>")
+def hello_world(divisor):
+    return 1 / divisor
 
 @app.route("/test")
 def test():
